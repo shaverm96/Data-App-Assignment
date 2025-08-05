@@ -31,8 +31,9 @@ st.line_chart(sales_by_month, y="Sales")
 
 st.write("## Matthew Shaver's additions")
 st.write("### (1)")
-categories = df["Category"].unique().tolist()
-selected_category = st.selectbox(("## Category"), options=categories, index=0)
+categories = df["Category"].unique().tolist()\
+cat_title = st.markdown("## Category")
+selected_category = st.selectbox(cat_title, options=categories, index=0)
 
 st.write("### (2)")
 sub_categories = df["Sub_Category"].unique().tolist()
