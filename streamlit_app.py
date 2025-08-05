@@ -32,11 +32,11 @@ st.line_chart(sales_by_month, y="Sales")
 st.write("## Matthew Shaver's additions")
 st.write("### (1)")
 categories = df["Category"].unique().tolist()
-selected_category = st.selectbox(st.markdown("## Category"), options=categories, index=0)
+selected_category = st.selectbox(st.write("## Category"), options=categories, index=0)
 
 st.write("### (2)")
 sub_categories = df["Sub_Category"].unique().tolist()
-selected_sub_category = st.multiselect(st.makdown("## Sub_Category"), options=sub_categories, default=None)
+selected_sub_category = st.multiselect(st.write("## Sub_Category"), options=sub_categories, default=None)
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
