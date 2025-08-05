@@ -36,7 +36,7 @@ selected_category = st.selectbox("Category", options=categories, index=0)
 
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 sub_categories = df["Sub_Category"].unique().tolist()
-selected_sub_category = st.multiselect("Sub_Category", optionssub_categories default=None)
+selected_sub_category = st.multiselect("Sub_Category", options=sub_categories, default=None)
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
