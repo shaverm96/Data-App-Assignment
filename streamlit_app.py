@@ -64,6 +64,7 @@ all_sales = df["Sales"].sum()
 all_profit = df["Profit"].sum()
 all_margin = all_profit / all_sales if all_sales else 0
 formated_all_margin = "{:.1%}".format(all_margin)
-diff = formatted_margin - formated_all_margin if formated_all_margin else 0
-st.metric("Overall Profit Margin (%)", formatted_margin, diff)
+diff = overall_margin - all_margin
+formatted_diff = "{:.1%}".format(diff)
+st.metric("Overall Profit Margin (%)", formatted_margin, formatted_diff)
 
