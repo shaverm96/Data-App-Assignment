@@ -45,9 +45,14 @@ sales_by_month = df_sales_filterd.filter(items=['Sales']).groupby(pd.Grouper(fre
 st.line_chart(sales_by_month, y="Sales")
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
-total_sales = "${:,.2f}".format(df_sales_filterd["Sales"].sum())
-total_profit = "${:,.2f}".format(df_sales_filterd["Profit"].sum())
-st.metric("Total Sales", total_sales)
-st.metric("Total Profit", total_profit)
+total_sales = df_sales_filterd["Sales"].sum()
+formatted_sales = "${:,.2f}".format(total_sales)
+total_profit = df_sales_filterd["Sales"].sum()
+formatted_profit = "${:,.2f}".format(total_profit)
+overall_margin = total_profit / total_sales
+formatted_margin = "{value:.1%}".format(overall_margin)
+st.metric("Total Sales", formatted_sales)
+st.metric("Total Profit", formatted_profit)
+st.metric("Overall Profit Margin (%)", formatted_margin)
 
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
