@@ -40,7 +40,7 @@ selected_sub_category = st.multiselect("Sub_Category", options=sub_categories, d
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 df_sales_filterd = df[df["Sub_Category"].isin(selected_sub_category)]
-sales_by_month = (df_sales_filterd.groupby(pd.Grouper(key="Date", freq="M"))["Sales"].sum())
+sales_by_month = df_sales_filterd.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 st.line_chart(sales_by_month, y="Sales")
 
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
