@@ -30,11 +30,11 @@ st.dataframe(sales_by_month)
 st.line_chart(sales_by_month, y="Sales")
 
 st.write("## Matthew Shaver's additions")
-st.write("### (1)")
+st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
 categories = df["Category"].unique().tolist()
 selected_category = st.selectbox("Category", options=categories, index=0)
 
-st.write("### (2)")
+st.write("### (2) add a multi-select for Sub_Category in the selected Category (1) (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 sub_categories = df["Sub_Category"].unique().tolist()
 selected_sub_category = st.multiselect("Sub_Category", options=sub_categories, default=None)
 
