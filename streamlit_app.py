@@ -48,5 +48,6 @@ st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-refe
 total_sales = "${:,.2f}".format(df_sales_filterd["Sales"].sum())
 total_profit = "${:,.2f}".format(df_sales_filterd["Profit"].sum())
 st.metric("Total Sales", total_sales)
+st.metric("Total Profit", total_profit)
 
 st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
